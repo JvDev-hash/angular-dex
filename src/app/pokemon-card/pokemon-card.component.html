@@ -1,0 +1,8 @@
+<div class="pokemon-card">
+    <img [src]="getPokemonImage()" /><br />
+    <div class="poke-infos">
+        <strong class="poke-number">#{{ padWithLeadingZeros(numero, 4) }}</strong>
+        <strong class="poke-name">{{ capFirstLetter(nome) }}</strong><br />
+        <!--<img src="https://img.shields.io/badge/-Fire-red" alt="">-->
+    </div>
+</div>
