@@ -1,8 +1,10 @@
 <div class="pokemon-card">
     <img [src]="getPokemonImage()" /><br />
     <div class="poke-infos">
-        <strong class="poke-number">#{{ padWithLeadingZeros(numero, 4) }}</strong>
-        <strong class="poke-name">{{ capFirstLetter(nome) }}</strong><br />
+        <strong class="poke-number">#{{ globalFunctions.padWithLeadingZeros(numero, 4) }}</strong>
+        <a [routerLink]="['/pokeinfos', nome]" routerLinkActive="router-link-active">
+            <strong class="poke-name">{{ globalFunctions.capFirstLetter(nome) }}</strong>
+        </a><br />
         <!--<img src="https://img.shields.io/badge/-Fire-red" alt="">-->
     </div>
 </div>

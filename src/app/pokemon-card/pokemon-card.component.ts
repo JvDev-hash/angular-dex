@@ -1,5 +1,6 @@
 import { NumberSymbol } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { GlobalFunctions } from '../utils/globalFunctions.class';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -13,21 +14,11 @@ export class PokemonCardComponent {
   @Input()
   numero!: number;
 
+  constructor(public globalFunctions: GlobalFunctions){}
+
   getPokemonImage(){
-    const formatedNumber = this.padWithLeadingZeros(this.numero, 3)
+    const formatedNumber = this.globalFunctions.padWithLeadingZeros(this.numero, 3)
 
     return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${formatedNumber}.png` // HD
-    //return `https://img.pokemondb.net/sprites/ruby-sapphire/normal/${this.nome}.png` // Sprites
-  }
-
-  padWithLeadingZeros(num: number, totalLength: number) {
-    if(String(num).length >= totalLength) {
-      return String(num);
-    }
-    return String(num).padStart(totalLength, '0');
-  }
-
-  capFirstLetter(str: string) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 }

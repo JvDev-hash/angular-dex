@@ -1,0 +1,21 @@
+<div class="dex-infos">
+    <strong class="poke-name">{{ globalFunctions.capFirstLetter(pokemonService.pokemon.name) }}</strong>
+    <strong class="poke-number">#{{ globalFunctions.padWithLeadingZeros(pokemonService.pokemon.id, 4) }}</strong>
+</div>
+<div class="poke-infos">
+    <img class="poke-img" [src]="getPokemonImage()" /><br />
+    <div class="basic-infos">    
+        <div class="base-infos one">
+            <label>Height</label><br />
+            <p>{{ globalFunctions.unitConversion('deci', pokemonService.pokemon.height) }}</p><br />
+            <label for="">Weight</label><br />
+            <p>{{ globalFunctions.unitConversion('hect', pokemonService.pokemon.weight) }} lbs</p>
+            <label>Ability</label><br />
+            <p>{{ globalFunctions.capFirstLetter( pokemonService.pokemon.abilities[0].ability.name ) }}</p>
+        </div>
+        <div class="base-infos two">
+            <label>Base Experience</label><br />
+            <p>{{ pokemonService.pokemon.base_experience }} xp</p><br />
+        </div>
+    </div>
+</div>
