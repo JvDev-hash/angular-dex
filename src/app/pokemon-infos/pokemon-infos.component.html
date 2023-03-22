@@ -6,16 +6,17 @@
     <img class="poke-img" [src]="getPokemonImage()" /><br />
     <div class="basic-infos">    
         <div class="base-infos one">
-            <label>Height</label><br />
-            <p>{{ globalFunctions.unitConversion('deci', pokemonService.pokemon.height) }}</p><br />
-            <label for="">Weight</label><br />
-            <p>{{ globalFunctions.unitConversion('hect', pokemonService.pokemon.weight) }} lbs</p>
-            <label>Ability</label><br />
-            <p>{{ globalFunctions.capFirstLetter( pokemonService.pokemon.abilities[0].ability.name ) }}</p>
+            <label class="first-row"><b>Height</b></label><br />
+            <b>{{ globalFunctions.unitConversion('deci', pokemonService.pokemon.height) }}</b><br />
+            <label class="second-row"><b>Weight</b></label><br />
+            <b>{{ globalFunctions.unitConversion('hect', pokemonService.pokemon.weight) }} lbs</b>
+            <label class="third-row"><b>Ability</b></label><br />
+            <b>{{ globalFunctions.capFirstLetter( pokemonService.pokemon.abilities[0].ability.name ) }}</b>
         </div>
         <div class="base-infos two">
-            <label>Base Experience</label><br />
-            <p>{{ pokemonService.pokemon.base_experience }} xp</p><br />
+            <label class="first-row"><b>Base Experience</b></label><br />
+            <b>{{ pokemonService.pokemon.base_experience }} xp</b><br />
         </div>
     </div>
+    
 </div>
